@@ -68,8 +68,27 @@ för att kunna använda denna variablen så kopplar vi den till den webviewn vi 
 ```
 för att kunna få tillgång till internet så behöver vi också enabla javascript.
 
-därefter öppnar vi en webviewclient och startar google då all denna kod körs i onCreate
+därefter öppnar vi en webviewclient och google startas då all denna kod körs i onCreate.
 
+
+## webpages
 - [x]   Add a html page as an asset.
 - [x]   Implement `showExternalWebPage()` and `showInternalWebPage()`. Hint: `loadUrl()`.
 - [x]   Call `showExternalWebPage()` and `showInternalWebPage()` when menu dropdown is clicked. Hint: `onOptionsItemSelected()`.
+
+Först så skapar vi en android.html fil i assets (app>assests>android.html), där vi har våran interna websida.
+
+därefter skapar vi 2st olika metoder den ena för att visa external websida och den andra för interna.
+
+```
+    public void showExternalWebPage(){
+        myWebView.loadUrl("https://google.com");
+    }
+
+    public void showInternalWebPage(){
+        myWebView.loadUrl("file:///android_asset/android.html");
+    }
+```
+
+den av de som körs avgörs med hjälp av onOptionsItemSelected i vilket användaren väljer att köra
+
